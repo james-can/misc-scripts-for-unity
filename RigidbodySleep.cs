@@ -4,30 +4,19 @@ using UnityEngine;
 
 public class RigidBodySleep : MonoBehaviour
 {
-    List<Rigidbody> children;
-    // Start is called before the first frame update
+    //This is good for a ragdoll character
     void Start()
     {
-        
-
-        Rigidbody[] childArray = GetComponentsInChildren<Rigidbody>();
-        children = new List<Rigidbody>();
-        children.AddRange(childArray);
-        
-        foreach(var child in children)
+        Rigidbody[] children = GetComponentsInChildren<Rigidbody>();
+        //print(string.Format("Number of children: {0}", children.Length));
+        foreach (var child in children)
         {
             child.Sleep();
         }
-
-        //rb = GetComponent<Rigidbody>();
-        //rb.Sleep();
     }
 
-    
-
-    // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         
-    }
+    }*/
 }
